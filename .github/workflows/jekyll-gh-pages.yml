@@ -1,0 +1,40 @@
+KINGDATA HOMEPAGE
+       │
+       ├── Start Investing
+       │       │
+       │       ├── Login
+       │       │
+       │       └── Register
+       │
+       └── Menu
+               │
+               ├── Home
+               ├── About
+               ├── How It Works
+               ├── Investment Plans
+               ├── FAQ
+               ├── Login
+               └── Register
+
+
+LOGIN / REGISTER
+       │
+       ▼
+USER DASHBOARD
+       │
+       ├── Dashboard
+       ├── Investments
+       ├── Wallet
+       ├── Deposits
+       ├── Withdrawals
+       ├── Transactions
+       ├── Profile
+       └── Logout
+
+
+ADMIN DASHBOARD
+       │
+       ├── Users
+       ├── Deposit Verification
+       ├── Withdrawal Management
+       └── Transactions
