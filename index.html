@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KingDATA — Invest. Grow. Build Your Future.</title>
+
+<style>
+:root {
+  --red: #d90429;
+  --dark-red: #a60320;
+  --light-red: #fff0f3;
+  --dark: #171717;
+  --gray: #6b7280;
+  --light: #f7f7f8;
+  --white: #ffffff;
+  --border: #e5e7eb;
+  --green: #16803c;
+  --shadow: 0 10px 30px rgba(0,0,0,.06);
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* GENERAL */
+.container {
+  width: min(1150px, 92%);
+  margin: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--red);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--dark-red);
+}
+
+.btn-outline {
+  background: white;
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.btn-dark {
+  background: var(--dark);
+  color: white;
+}
+
+.btn-light {
+  background: var(--light-red);
+  color: var(--red);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: var(--gray);
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* HEADER */
+header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  color: var(--red);
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--dark);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  font-size: 26px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #fff 0%, #fff3f5 100%);
+  padding: 90px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 30px;
+  background: var(--light-red);
+  color: var(--red);
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--gray);
+  max-width: 550px;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-visual {
+  min-height: 350px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #d90429, #720016);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  padding: 30px;
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+.hero-visual::before {
+  width: 300px;
+  height: 300px;
+}
+
+.hero-visual::after {
+  width: 500px;
+  height: 500px;
+}
+
+.hero-box {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-box .crown {
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+
+.hero-box h2 {
+  font-size: 35px;
+}
+
+.hero-box p {
+  color: #ffe1e7;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: -35px;
+  position: relative;
+  z-index: 5;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.stat-card h3 {
+  color: var(--red);
+  font-size: 25px;
+}
+
+/* WHY */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.feature-card {
+  padding: 30px;
+}
+
+.feature-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-red);
+  border-radius: 15px;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* HOW IT WORKS */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.step {
+  text-align: center;
+  padding: 25px;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: var(--red);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* PLANS */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.plan {
+  padding: 28px;
+  position: relative;
+}
+
+.plan.featured {
+  border: 2px solid var(--red);
+}
+
+.plan-tag {
+  position: absolute;
+  top: -13px;
+  right: 20px;
+  background: var(--red);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.plan h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.plan-description {
+  color: var(--gray);
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.plan-price {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--red);
+  margin-bottom: 5px;
+}
+
+.plan-price small {
+  font-size: 13px;
+  color: var(--gray);
+  font-weight: normal;
+}
+
+.plan ul {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.plan li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.plan li::before {
+  content: "✓";
+  color: var(--green);
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* FAQ */
+.faq {
+  max-width: 800px;
+  margin: auto;
+}
+
+.faq-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.faq-answer {
+  padding: 0 20px 20px;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+  background: #151515;
+  color: white;
+  padding: 60px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ff304f;
+  margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+  color: #aaa;
+  font-size: 14px;
+}
+
+footer h4 {
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+}
+
+/* AUTH */
+.auth-screen {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff 0%, #fff0f3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+}
+
+.auth-box {
+  width: min(450px, 100%);
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0,0,0,.08);
+  border: 1px solid var(--border);
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.auth-logo .logo {
+  font-size: 30px;
+}
+
+.auth-box h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--gray);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--light);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 25px;
+}
+
+.auth-tab {
+  padding: 11px;
+  border-radius: 8px;
+  background: transparent;
+  font-weight: bold;
+}
+
+.auth-tab.active {
+  background: white;
+  color: var(--red);
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.form-group {
+  margin-bottom: 17px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  background: white;
+}
+
+.form-control:focus {
+  border-color: var(--red);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--gray);
+}
+
+.auth-footer a {
+  color: var(--red);
+  font-weight: bold;
+}
+
+/* DASHBOARD */
+.dashboard {
+  min-height: 100vh;
+  background: #f6f7f9;
+}
+
+.dashboard-header {
+  height: 72px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 72px);
+}
+
+.sidebar {
+  width: 245px;
+  background: white;
+  border-right: 1px solid var(--border);
+  padding: 25px 15px;
+  flex-shrink: 0;
+}
+
+.sidebar-title {
+  font-size: 11px;
+  color: #999;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 15px;
+  margin: 15px 0 10px;
+}
+
+.sidebar-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 15px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background: transparent;
+  color: #555;
+  text-align: left;
+  font-weight: 600;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  background: var(--light-red);
+  color: var(--red);
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 30px;
+  min-width: 0;
+}
+
+.dashboard-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.dashboard-top h1 {
+  font-size: 27px;
+}
+
+.dashboard-top p {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background: var(--light-red);
+  color: var(--red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.dash-card {
+  padding: 22px;
+}
+
+.dash-card .card-label {
+  color: var(--gray);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.dash-card h2 {
+  font-size: 25px;
+}
+
+.dash-card .card-icon {
+  float: right;
+  font-size: 24px;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  gap: 22px;
+}
+
+.content-card {
+  padding: 25px;
+  margin-bottom: 22px;
+}
+
+.content-card h3 {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-header h3 {
+  margin: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th,
+td {
+  padding: 14px 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+
+th {
+  color: var(--gray);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background: #fff7e6;
+  color: #b7791f;
+}
+
+.status.approved {
+  background: #e9f8ef;
+  color: var(--green);
+}
+
+.status.rejected {
+  background: #fff0f0;
+  color: #c53030;
+}
+
+.wallet-box {
+  background: linear-gradient(135deg, var(--red), #8d001c);
+  color: white;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 22px;
+}
+
+.wallet-box p {
+  color: #ffdce3;
+  font-size: 13px;
+}
+
+.wallet-box h2 {
+  font-size: 35px;
+  margin: 10px 0 20px;
+}
+
+.wallet-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.wallet-actions button {
+  flex: 1;
+  padding: 11px;
+  border-radius: 9px;
+  font-weight: bold;
+}
+
+.wallet-actions button:first-child {
+  background: white;
+  color: var(--red);
+}
+
+.wallet-actions button:last-child {
+  background: rgba(255,255,255,.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,.4);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 35px 15px;
+  color: var(--gray);
+}
+
+.empty-state .empty-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 2000;
+}
+
+.modal-box {
+  width: min(520px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.close-modal {
+  background: #f1f1f1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+/* PAYMENT INFO */
+.payment-info {
+  background: var(--light-red);
+  border: 1px solid #ffd2da;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.payment-info h4 {
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.payment-info p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #222;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 10px;
+  z-index: 3000;
+  display: none;
+  max-width: 350px;
+  font-size: 14px;
+}
+
+.toast.show {
+  display: block;
+  animation: fadeIn .3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ADMIN */
+.admin-badge {
+  background: #171717;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+  .hero-grid,
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features,
+  .plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats,
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar.mobile-open {
+    flex-wrap: wrap;
+  }
+
+  .navbar.mobile-open .nav-links,
+  .navbar.mobile-open .nav-actions {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 15px;
+  }
+
+  .navbar.mobile-open .nav-actions {
+    flex-direction: row;
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-visual {
+    min-height: 270px;
+  }
+
+  .features,
+  .plans,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .stats,
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card {
+    padding: 18px 10px;
+  }
+
+  .stat-card h3 {
+    font-size: 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    padding: 0 15px;
+  }
+
+  .dashboard-layout {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 10px;
+    display: flex;
+    overflow-x: auto;
+    gap: 5px;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  .sidebar-link {
+    min-width: max-content;
+    margin: 0;
+    padding: 10px 13px;
+  }
+
+  .dashboard-main {
+    padding: 20px 15px;
+  }
+
+  .dashboard-top h1 {
+    font-size: 23px;
+  }
+
+  .user-menu span {
+    display: none;
+  }
+
+  .content-card {
+    padding: 18px;
+  }
+
+  .auth-box {
+    padding: 25px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= PUBLIC WEBSITE ================= -->
+<div id="publicWebsite">
+
+<header>
+  <div class="container navbar" id="navbar">
+    <a href="#" class="logo">King<span>DATA</span></a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#plans">Plans</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline" onclick="showAuth('login')">Login</button>
+      <button class="btn btn-primary" onclick="showAuth('register')">Get Started</button>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">Welcome to KingDATA</span>
+
+      <h1>Invest. Grow.<br><span>Build Your Future.</span></h1>
+
+      <p>
+        Take control of your financial journey with KingDATA.
+        Start small, grow consistently, and build a better future.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="showAuth('register')">
+          Start Investing →
+        </button>
+        <a href="#how-it-works" class="btn btn-outline">
+          Learn More
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-box">
+        <div class="crown">👑</div>
+        <h2>KingDATA</h2>
+        <p>Smart Steps. Bigger Dreams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat-card">
+      <h3>24/7</h3>
+      <p>Platform Access</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Secure</h3>
+      <p>Account Protection</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Easy</h3>
+      <p>Simple Process</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Support</h3>
+      <p>Customer Assistance</p>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why Choose KingDATA?</h2>
+      <p>Everything you need to take your financial goals seriously.</p>
+    </div>
+
+    <div class="features">
+      <div class="card feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Grow Your Money</h3>
+        <p>
+          Explore structured plans designed to help you work toward your
+          financial goals.
+        </p>
+      </div>
+
+      <div class="card feature-card">
+        <div class="feature-icon">🔐</div>
+        <h3>Simple & Transparent</h3>
+        <p>
+          Clear account information, straightforward processes, and easy
+          access to your activities.
+        </p>
+      </div>
+
+      <div class="card feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Reliable Support</h3>
+        <p>
+          Get assistance when you need help understanding your account
+          or using the platform.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how-it-works" style="background:white;">
+  <div class="container">
+    <div class="section-title">
+      <h2>How It Works</h2>
+      <p>Getting started is simple.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Create Account</h3>
+        <p>Register with your details.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Choose a Plan</h3>
+        <p>Select a plan that suits your goals.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Make a Deposit</h3>
+        <p>Follow the available payment instructions.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Track Your Account</h3>
+        <p>Monitor your balance and transactions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plans">
+  <div class="container">
+    <div class="section-title">
+      <h2>Investment Plans</h2>
+      <p>Choose a plan according to your financial goals.</p>
+    </div>
+
+    <div class="plans">
+      <div class="card plan">
+        <h3>Starter Plan</h3>
+     
